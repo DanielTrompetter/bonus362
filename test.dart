@@ -7,7 +7,7 @@ class Button
   Button(this.title, {required this.width, required this.height, required this.radius, required this.fontsize, required this.padding});
 }
 
-// Bonus 3
+// Bonus 3/4/5
 class Rectangle
 {
   double width, height;
@@ -37,6 +37,29 @@ class Rectangle
   }
 }
 
+// Bonus 6
+class Author
+{
+  String name;
+  int YearOfBirth;
+
+  Author(this.name, this.YearOfBirth);
+}
+
+class Book
+{
+  String title;
+  int pages;
+  Author author;
+
+  Book(this.title, this.pages, this.author);
+
+  void PrintInfo()
+  {
+    print("Das Buch '$title' hat $pages Seiten und stammt von ${author.name}.");
+  }
+}
+
 void main()
 {
   // bonus 3
@@ -61,4 +84,9 @@ void main()
   rect.ShowPerimeterAndArea();
   rect.Scale(8.3);
   rect.ShowPerimeterAndArea();
+
+  // Bonus 6
+  Author author1 = Author("Jan Biernacki", 2021);
+  Book book1 = Book("Kleiner Leitfaden: Wie verwirrt man alte Coder?", 1337, author1);
+  book1.PrintInfo();
 }
