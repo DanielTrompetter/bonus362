@@ -23,10 +23,23 @@ class Rectangle
   {
     return width*height;
   }
+
+  // Bonus 5
+  void Scale(double scaleValue)
+  {
+    width *= scaleValue;
+    height *= scaleValue;
+  }
+
+  void ShowPerimeterAndArea()
+  {
+    print("Ein Rechteck der Breite ${width.toStringAsFixed(2)} cm und Höhe ${height.toStringAsFixed(2)} cm hat einen Umfang von ${Perimeter().toStringAsFixed(2)} cm und eine Fläche von ${Area().toStringAsFixed(2)} cm².");
+  }
 }
 
 void main()
 {
+  // bonus 3
   Button b = Button(
     "In den Warenkorb", 
     width: 96,
@@ -35,4 +48,17 @@ void main()
     fontsize: 14,
     padding: 8
   );
+
+  // Bonus 4
+  Rectangle rect = Rectangle(200, 100);
+  rect.ShowPerimeterAndArea();
+
+  rect.width = 80;
+  rect.ShowPerimeterAndArea();
+
+  // Bonus 5
+  rect.Scale(0.5);
+  rect.ShowPerimeterAndArea();
+  rect.Scale(8.3);
+  rect.ShowPerimeterAndArea();
 }
